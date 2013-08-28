@@ -57,10 +57,10 @@
           </div>
           <div class="panel-body">
 
-          <ul class="list-inline">
-            <li data-currency-symbol="£" data-currency-value="15.94" data-currency-id="2" class="forex-data"> GBP: £15.94</li>
-            <li data-currency-symbol="$" data-currency-value="10.24" data-currency-id="3" class="forex-data"> USD: $10.24</li>
-            <li data-currency-symbol="€" data-currency-value="13.69" data-currency-id="4" class="forex-data"> EUR: €13.69</li>
+          <ul class="list-inline currency-list">
+            <li data-currency-symbol="£" data-currency-value="15.94" id="2" class="forex-data"> GBP: £15.94</li>
+            <li data-currency-symbol="$" data-currency-value="10.24" id="3" class="forex-data"> USD: $10.24</li>
+            <li data-currency-symbol="€" data-currency-value="13.69" id="4" class="forex-data"> EUR: €13.69</li>
           </ul>
 
           </div>
@@ -119,9 +119,11 @@
       var currency_value = 0;
       $("#ProductCurrencyId").change(function() {
         var currency_id = $(this).find('option:selected').val();
-        var currency_value = $('.forex-data').attr("data-currency-id");
-        console.log(currency_id);
-        console.log(currency_value);
+
+        // Use ID for IDs, not data-id :) Overly complicated
+        var currencyValue = $(".currency-list").find("#"+currency_id).attr('data-currency-value');
+        var currencySign = $(".currency-list").find("#"+currency_id).attr('data-currency-symbol');
+        $("#exampleInputForex").val(currencySign+currencyValue);
       });
     });
     </script>
