@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Selection Form with Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified Jquery Script -->
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    
+    
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer.css" rel="stylesheet">
+
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" >
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Begin page content -->
+      <div class="container">
+
+
+
+        <div class="page-header">
+          <h1>Selection Form</h1>
+        </div>
+        <p class="lead">Select a currency from the drop down to fill the form with the correct values.</p>
+
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">FOREX: 2013-08-26</h3>
+          </div>
+          <div class="panel-body">
+
+          <ul class="list-inline">
+            <li data-currency-symbol="£" data-currency-value="15.94" data-currency-id="2" class="forex-data"> GBP: £15.94</li>
+            <li data-currency-symbol="$" data-currency-value="10.24" data-currency-id="3" class="forex-data"> USD: $10.24</li>
+            <li data-currency-symbol="€" data-currency-value="13.69" data-currency-id="4" class="forex-data"> EUR: €13.69</li>
+          </ul>
+
+          </div>
+        </div>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Select forex from drop down</h3>
+        </div>
+        <div class="panel-body">
+          <select id="ProductCurrencyId" class="input-xxlarge" name="data[Product][currency_id]">
+            <option value="1">ZAR</option>
+            <option value="2">GBP</option>
+            <option selected="selected" value="3">USD</option>
+            <option value="4">EUR</option>
+          </select>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <div id="footer">
+  <div class="container">
+    <p class="muted credit">Example courtesy <a href="https://github.com/abarkhuysen">Arthur Barkhuysen</a>, 
+      <a href="https://github.com/jadekler">Jean Barkhuysen</a>.</p>
+
+
+    </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+      var currency_id = 0;
+      var currency_value = 0;
+      $("#ProductCurrencyId").change(function() {
+        var currency_id = $(this).find('option:selected').val();
+        var currency_value = $('.forex-data').attr("data-currency-id");
+        console.log(currency_id);
+        console.log(currency_value);
+      });
+    });
+    </script>
+  </body>
+</html>
