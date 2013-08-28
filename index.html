@@ -71,12 +71,29 @@
             <h3 class="panel-title">Select forex from drop down</h3>
         </div>
         <div class="panel-body">
-          <select id="ProductCurrencyId" class="input-xxlarge" name="data[Product][currency_id]">
-            <option value="1">ZAR</option>
-            <option value="2">GBP</option>
-            <option selected="selected" value="3">USD</option>
-            <option value="4">EUR</option>
-          </select>
+          <form role="form">
+            <select id="ProductCurrencyId" class="form-control" name="data[Product][currency_id]">
+              <option value="1">ZAR</option>
+              <option value="2">GBP</option>
+              <option selected="selected" value="3">USD</option>
+              <option value="4">EUR</option>
+            </select>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title">Form results</h3>
+        </div>
+        <div class="panel-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Forex value</label>
+              <input type="text" class="form-control" id="exampleInputForex">
+            </div>
+          </form>
         </div>
       </div>
 
